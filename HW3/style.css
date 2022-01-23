@@ -1,0 +1,356 @@
+/* 
+     3. second flower image can be used from the first flower image
+      4. second background image light
+*/
+
+.nav_bar {
+    /*overflow: hidden;*/
+    background-color: white;
+    z-index: 2;
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+.nav_bar_a {
+    float: right;
+    position: fixed;
+    right: 30px;
+    padding: 20px;
+}
+
+.nav_bar_a a {
+    font-family: Arial;
+    color: black;
+    padding: 20px 10px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav_bar_main_event {
+    font-family: Arial;
+    float: left;
+    padding: 20px 10px;
+    padding-left: 120px;
+    font-size: 15px;
+}
+
+.nav_bar_main_event label {
+    z-index: 2;
+    text-decoration: none;
+    color: #AF9346;
+}
+
+
+.image_one {
+    background-image: url(image3.png);
+    /*min-height: 670px;*/
+    /*height: 670px;
+    width: 90%;*/
+    width: 100%;
+    height: 670px;
+    
+    background-attachment: fixed;
+    /*background-position: left bottom 40%;*/
+    background-position: top; /*need to be change */
+    background-repeat: no-repeat;
+    background-size: 1239px 850px; /*put numb*/
+    
+    /*
+    Background-image
+    Background-size
+    Background-offset
+    */
+}
+
+.word_over_image_one {
+    font-family: "Times New Roman";
+    position: absolute;
+    text-align: center;
+    color: white;
+    
+    top: 200px;
+    left: 400px;
+    
+    letter-spacing: 0.4em;
+    line-height: 2.0;
+    font-size: 50px;
+    display: inline-block;
+    
+    
+}
+
+.first_pre{
+    margin-top: 20px;
+}
+
+.seond_part {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.flower_n_words {
+    position: inherit;
+    z-index: 1;
+    
+}
+
+.flower{
+    background-image: url(flower.png);
+    
+    position: inherit;
+    height: 580px;
+    width: 400px;
+    
+}
+
+.services {
+    overflow: hidden;
+    font-family: Arial;
+    position: relative;
+    text-align: center;
+    top: 130px;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 0.4em;
+}
+
+.flower_content{
+    font-family: "Times New Roman";
+    position: relative;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.1em;
+    top: 250px;
+    font-size: 18px;
+    line-height: 2.0;
+}
+
+.svg_rec{
+    position: relative;
+    text-align: center;
+}
+
+.rectangle_on_flower {
+    position: relative;
+    fill: transparent;
+    stroke: white;
+    stroke-width: 1;
+    top: 350px;
+}
+
+.dicover_content_on_flower {
+    font-family: Arial;
+    position: relative;
+    top: 310px;
+    color: white;
+    font-style:inherit;
+    font-size: 16px;
+}
+
+.image_two {
+    position: inherit;
+    float: right;
+    object-fit: cover;
+    right: 0px;
+    width: 700px;
+    height: 580px;
+    /*
+    width: 600px;
+    height: 548px;
+    */
+}
+
+.second_pre {
+    margin-top: 90px;
+}
+
+.second_text_section {
+    text-align: center;
+}
+
+.quote {
+    font-family: "Times New Roman";
+    font-size: 80px;
+}
+
+.text_after_quote {
+    font-family: "Times New Roman";
+    font-size: 30px;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+}
+
+.names_after_text {
+    font-size: 15px;
+    font-family: Arial;
+    color: burlywood;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.third_pre {
+    margin-top: 90px;
+}
+
+.image_three{
+    background-image: url(image2.png);
+    background-attachment: fixed ;
+    background-position: top;
+    min-height: 650px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 1239px 1158px;
+}
+
+.flower_on_image_three {
+    background-image: url(flower.png);
+    float: right;
+    height: 530px;
+    width: 320px;
+    background-repeat: no-repeat;
+    background-position: center top 20%;
+    margin-top: 50px; /* ( height from .image_three - this height ) / 2*/
+    margin-right: 80px;
+    
+    /*
+    background-attachment: scroll;
+    min-height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: cover;
+    background-position: right;
+    */
+}
+
+.gallery {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    font-size: 30px;
+    letter-spacing: 0.4em;
+    top: 120px;
+}
+
+.second_flower_content {
+    font-family: "Times New Roman";
+    position: relative;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.3em;
+    font-size: 20px;
+    top: 230px;
+    line-height: 2.0;
+}
+
+
+.second_svg_rec{
+    position: relative;
+    text-align: center;
+}
+
+.rectangle_on_second_flower {
+    position: relative;
+    fill: transparent;
+    stroke: white;
+    stroke-width: 1;
+    top: 285px;
+}
+
+.dicover_content_on_second_flower {
+    font-family: Arial;
+    position: relative;
+    top: 245px;  /* top from .rectangle_on_second_flower - 40px*/
+    color: white;
+    font-style:inherit;
+    font-size: 16px;
+}
+
+.footer {
+    background-color: #AF9346; 
+    color: white;
+    padding: 60px;
+}
+
+.address_on_footer{
+    margin-left: 40px;
+    font-family: Arial;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    line-height: 1.5
+}
+
+.first_vertical_bar_on_footer {
+    border-left: 1px solid white;
+    height: 70px;
+    margin-top: -70px;
+    margin-left: 230px;
+}
+
+.contact_on_footer {
+    font-family: Arial;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    margin-top: -70px;
+    margin-left: 260px;
+    line-height: 1.5
+}
+
+.second_vertical_bar_on_footer {
+    border-left: 1px solid white;
+    height: 70px;
+    margin-top: -70px;
+    margin-left: 460px;
+}
+
+.copyright_on_footer {
+    font-family: Arial;
+    letter-spacing: 0 em;
+    font-size: 16px;
+    margin-top: -25px;
+    margin-left: 230px;
+}
+
+.third_svg_rec {
+    position: relative;
+    text-align: right;
+    margin-right: 60px;
+    margin-top: -70px;
+}
+
+.rectangle_on_footer {
+    
+    position: relative;
+    fill: transparent;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.svg_content_on_footer {
+    font-family: Arial;
+    position: relative;
+    margin-right: 20px;
+    margin-top: -37px;
+}
+
+.space_adjust_width_on_footer {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
