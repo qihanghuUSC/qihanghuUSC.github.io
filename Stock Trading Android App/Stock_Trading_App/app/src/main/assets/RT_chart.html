@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--link href='https://fonts.googleapis.com/css?family=Montserrat:light' rel='stylesheet' type='text/css'-->
+        <!--link rel="stylesheet" href="Style.css"-->
+    </head>
+    <body class="body">
+        <div id="container" class="container_chart"></div>
+        
+        
+    </body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+    <script>
+        
+        
+        
+            //Android.showToast("connect successfully");
+            var ticker = Android.getTicker();
+            var url = 'https://espressjsbackend-6688.wl.r.appspot.com/insightsRT/' + ticker;
+        
+        //var url = 'https://espressjsbackend-6688.wl.r.appspot.com/insightsRT/TSLA';
+                    
+            Highcharts.getJSON(url, function (data) {
+
+    // create the chart
+                let colors = ['#1d6e39', '#2ab759', '#b88b2a', '#f25c5e', '#803233'];
+    Highcharts.chart('container', {
+         
+                chart: {
+                  type: 'column',
+              },
+              title: {
+                  text: 'Recommendation Trends'
+              },
+              lang: {
+                noData: "No data to display"
+              },
+              noData: {
+                style: {
+                    fontWeight: 'bold',
+                    fontSize: '15px',
+                    color: '#303030'
+                }
+            },
+              xAxis: {
+                  categories: data['t']
+              },
+              yAxis: {
+                  min: 0,
+                  title: {
+                      text: '#Analysis',
+                      align: 'middle'
+                  },
+                  stackLabels: {
+                      enabled: true,
+                      style: {
+                          fontWeight: 'bold',
+                          color: ( // theme
+                              Highcharts.defaultOptions.title.style &&
+                              Highcharts.defaultOptions.title.style.color
+                          ) || 'black'
+                      }
+                  }
+              },
+              legend: {
+                  align: 'center',
+                  //x: -30,
+                  verticalAlign: 'bottom',
+                  //y: 25,
+                  //floating: true,
+                  backgroundColor:
+                      Highcharts.defaultOptions.legend.backgroundColor || 'white',
+                  //borderColor: '#CCC',
+                  borderWidth: 0,
+                  //symbolHeight: 150,
+                  shadow: false
+              },
+              
+              colors: colors,
+
+              tooltip: {
+                  
+                  headerFormat: '<b>{point.x}</b><br/>',
+                  pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+                /*
+                formatter: function () {
+                  return this.x  + '<br/><span style="color:' + colors[this.series.index] + ';">\u25CF ' + "</span> " + this.series.name +  ': ' + this.y + '<br/>' ;    }
+                */
+                  //headerFormat: '<b>{point.x}</b><br/>',
+                  //pointFormat: '{series.name}: {point.y}<br/>'
+              },
+              plotOptions: {
+                  column: {
+                      stacking: 'normal',
+                      dataLabels: {
+                          enabled: false
+                      }
+                  }
+              },
+              series: [{
+                type: undefined,
+                  name: 'Strong Buy',
+                  data: data['sb']
+              }, {
+                type: undefined,
+                  name: 'Buy',
+                  data: data['b']
+              }, {
+                type: undefined,
+                  name: 'Hold',
+                  data: data['h']
+              }, {
+                type: undefined,
+                name: 'Sell',
+                data: data['s']
+            }, {
+              type: undefined,
+                name: 'Strong Sell',
+                data: data['ss']
+            }]
+          
+    });
+   
+    
+});
+
+        
+        
+    </script>
+</html>

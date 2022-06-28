@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Stocks</string>
+    <string name="portfolio">PORTFOLIO</string>
+    <string name="portfolio_lowerCase">Portfolio</string>
+    <string name="favorites">FAVORITES</string>
+    <string name="net_worth">Net Worth</string>
+    <string name="cash_balance">Cash Balance</string>
+    <string name="dollar_sign">$</string>
+    <string name="ticker_activity">Ticker_A</string>
+    <string name="action_favorite">action_favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Shares_Owned">Shares Owned:</string>
+    <string name="Avg_Cost">Avg. Cost / Share:</string>
+    <string name="Total_Cost">Total Cost:</string>
+    <string name="change">Change:</string>
+    <string name="market_value">Market Value:</string>
+    <string name="stats">Stats</string>
+    <string name="TRADE">TRADE</string>
+    <string name="open_price">Open Price : </string>
+    <string name="high_price">High_Price : </string>
+    <string name="low_price">Low Price : </string>
+    <string name="pre_close">Prev. Close : </string>
+    <string name="about">About</string>
+    <string name="ipo">IPO Start Date</string>
+    <string name="industry">Industry</string>
+    <string name="webpage">Webpage</string>
+    <string name="peers">Company Peers</string>
+    <string name="insights">Insights</string>
+    <string name="social">Social Sentiments</string>
+    <string name="reddit">Reddit</string>
+    <string name="twitter">Twitter</string>
+    <string name="total_mentions">Total Mentions</string>
+    <string name="Pmention">Positive Mentions</string>
+    <string name="Nmentions">Negative Mentions</string>
+    <string name="News">News</string>
+    <color name="colorTransparent">#43000000</color>
+
+
+</resources>

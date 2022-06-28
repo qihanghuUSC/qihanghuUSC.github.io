@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:light' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+<body class="body">
+    <div class="first_section"></div>
+        <h1 class="head_one">Stock Search</h1>
+        <form role="search" class="search_bar_section">
+            <button onclick="getSearchContent()" class="seach_button" type="submit">
+                <img src="img/search-solid.svg" class="search_icon" />
+            </button>
+            <input type="text" placeholder="Enter Stock Ticker Symbol" class="search_back_text" id="search_content" required minlength=0/>
+            <button onclick="clearSearchContent()" class="cross_button">
+                <img src="img/times-solid.svg" class="search_crosee_icon" />
+            </button>
+
+        </form>
+        <div id="error" class="error_mes"></div>
+    
+        <div id="section_two">
+            <div class="tabs_region">
+                <div id="tab_list" class="tabs">
+                    <button class="tab_item" onClick="openPage('Company', this)" id="default_open">Company</button>
+                    <button class="tab_item" onClick="openPage('Stock_Summary', this)" >Stock Summary</button>
+                    <button class="tab_item" onClick="openPage('Charts', this)">Charts</button>
+                    <button class="tab_item" onClick="openPage('Latest_News', this)" id="ln">Latest News</button>
+                </div>
+            </div>
+            
+            <div id="Company" class="content_page">
+                <br>
+                <div class="image_" id="i">
+                </div>
+                <hr class="hr_line">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Company Name</b>
+                    <label class="label_value_on_tab_page" id="cn"></label>
+                </div>
+                <hr class="hr_line">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Stock Ticker Symbol</b>
+                    <label class="label_value_on_tab_page" id="sts"></label>
+                </div>
+                <hr class="hr_line">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Stock Exchange Code</b>
+                    <label class="label_value_on_tab_page" id="sec"></label>
+                </div>
+                <hr class="hr_line">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Company IPO Date</b>
+                    <label class="label_value_on_tab_page" id="cid"></label>
+                </div>
+                <hr class="hr_line">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Category</b>
+                    <label class="label_value_on_tab_page" id="c"></label>
+                </div>
+                <hr class="hr_line">
+            </div>
+            
+            
+            
+            
+            <div id="Stock_Summary" class="content_page">
+                <br>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Stock Ticker Symbol</b>
+                    <label class="label_value_on_tab_page" id="sts_ss"></label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Trading Day</b>
+                    <label class="label_value_on_tab_page" id="td_ss"></label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Previous Closing Price</b>
+                    <label class="label_value_on_tab_page" id="pcp_ss"></label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Opening Price</b>
+                    <label class="label_value_on_tab_page" id="op_ss"></label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">High Price</b>
+                    <label class="label_value_on_tab_page" id="hp_ss"></label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Low Price</b>
+                    <label class="label_value_on_tab_page" id="lp_ss"></label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Change</b>
+                    <label class="label_value_on_tab_page" id="c_ss">
+                    </label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="text_content_on_tab_page">
+                    <b class="bold_label_on_page">Change Percent</b>
+                    <label class="label_value_on_tab_page" id="cp_ss"></label>
+                </div>
+                <hr class="hr_line_s">
+                <div class="trend_section_layout">
+                    <div class="trend_section">
+                        <div class="strong_sell_in_tred_sec">Strong Sell</div>
+                        <div class="grid_item_one_in_tred_sec" id="item_one_trend_sec"></div>
+                        <div class="grid_item_two_in_tred_sec" id="item_two_trend_sec"></div>
+                        <div class="grid_item_three_in_tred_sec" id="item_three_trend_sec"></div>
+                        <div class="grid_item_four_in_tred_sec" id="item_four_trend_sec"></div>
+                        <div class="grid_item_five_in_tred_sec" id="item_five_trend_sec"></div>
+                        <div class="strong_buy_in_tred_sec">Strong Buy</div>
+                    </div>
+                </div>
+                <div class="recommendation_trend_text">Recommendation Trends</div>
+            </div>
+            
+            
+            
+            
+            <div id="Charts" class="content_page">
+                <div id="container" class="container_chart"></div>
+            </div>
+            
+            
+            
+            <div id="Latest_News" class="content_page">
+                <br>
+                <div class="news_lists">
+                    <div class="one_news" id="news_one">
+                        <div id="news_image_one" class="news_image_section">
+                        </div>
+                        <div id="news_content_one" class="news_content_section">
+                            <b id="news_bold_one"></b>
+                            <br>
+                            <label id="news_label_one"></label>
+                            <br>
+                            <a target="_blank" id="news_a_one">See Original Post</a>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="one_news" id="news_two">
+                        <div id="news_image_two" class="news_image_section">
+                        </div>
+                        <div id="news_content_two" class="news_content_section">
+                            <b id="news_bold_two"></b>
+                            <br>
+                            <label id="news_label_two"></label>
+                            <br>
+                            <a target="_blank" id="news_a_two">See Original Post</a>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="one_news" id="news_three">
+                        <div id="news_image_three" class="news_image_section">
+                        </div>
+                        <div id="news_content_three" class="news_content_section">
+                            <b id="news_bold_three"></b>
+                            <br>
+                            <label id="news_label_three"></label>
+                            <br>
+                            <a target="_blank" id="news_a_three">See Original Post</a>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="one_news" id="news_four">
+                        <div id="news_image_four" class="news_image_section">
+                        </div>
+                        <div id="news_content_four" class="news_content_section">
+                            <b id="news_bold_four"></b>
+                            <br>
+                            <label id="news_label_four"></label>
+                            <br>
+                            <a target="_blank" id="news_a_four">See Original Post</a>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="one_news" id="news_five">
+                        <div id="news_image_five" class="news_image_section">
+                        </div>
+                        <div id="news_content_five" class="news_content_section">
+                            <b id="news_bold_five"></b>
+                            <br>
+                            <label id="news_label_five"></label>
+                            <br>
+                            <a target="_blank" id="news_a_five">See Original Post</a>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+    <pre>
+    
+    
+    
+    
+    
+    
+    
+    
+    </pre>
+    <script> //document.getElementById("ln").click();
+        //default_open   ss
+        //document.getElementById("section_two").style.display = "none";
+    </script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--link href='https://fonts.googleapis.com/css?family=Montserrat:light' rel='stylesheet' type='text/css'-->
+        <!--link rel="stylesheet" href="Style.css"-->
+    </head>
+    <body class="body">
+        <div id="container" class="container_chart"></div>
+        
+        
+    </body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+    <script>
+        
+        
+        
+        //Android.showToast("connect successfully");
+        var ticker = Android.getTicker();
+        var url = 'https://espressjsbackend-6688.wl.r.appspot.com/insightsEPS/' + ticker;
+        //var url = 'https://espressjsbackend-6688.wl.r.appspot.com/insightsEPS/TSLA';
+                    
+        Highcharts.getJSON(url, function (data) {
+		Highcharts.chart('container', {
+        chart: {
+                  type: 'spline',
+              },
+              title: {
+                  text: 'Historical EPS Surprises'
+              },
+              xAxis: {
+
+                  maxPadding: 0.05,
+                  showLastLabel: true,
+                  categories: data['t']
+              },
+              yAxis: {
+                  title: {
+                      text: 'Quarterly EPS'
+                  },
+                  /*
+                  labels: {
+                      format: '{value}' + '<br>' + 'Surprise: 0.1781' 
+                  },*/
+                  lineWidth: 2
+              },
+              legend: {
+                  enabled: true
+
+              },
+              tooltip: {
+
+                  shared: true
+              },
+              plotOptions: {
+                  spline: {
+                      marker: {
+                          //enable: false
+                      }
+                  },
+                  series: {
+                        dataLabels: {
+                        enabled: true,
+                        formatter: function () {
+                          // if last point
+                          if(this.point === this.series.data[this.series.data.length-1]) {
+                            return this.series.name;
+                          }
+                        }
+                      }
+              },
+              },
+              series: [{
+                  type: undefined,
+                  name: 'Actual',
+                  data: data['a']
+              },
+              {
+                  type: undefined,
+                  name: 'Estimate',
+                  data: data['e']
+              }]
+    });
+});
+
+        
+        
+    </script>
+</html>
